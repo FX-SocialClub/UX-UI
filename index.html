@@ -132,6 +132,13 @@ section{position:relative;z-index:1;padding:100px 48px;}
 .ai-metric-val span{color:var(--accent);}
 .ai-metric-label{font-size:12px;color:var(--grey);line-height:1.5;}
 
+/* interactive grid effect (About) */
+#about{overflow:hidden;}
+#about .section-header,#about .ai-grid{position:relative;z-index:2;}
+.grid-bg{position:absolute;inset:0;z-index:0;display:grid;gap:2px;pointer-events:none;}
+.grid-cell{background:#101010;transition:background 1.4s ease, box-shadow 1.4s ease;}
+.grid-cell.active{background:var(--accent);box-shadow:0 0 10px rgba(200,255,0,0.4);transition:background 0s, box-shadow 0s;}
+
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
 .service-card{background:var(--black);padding:40px 36px;position:relative;overflow:hidden;transition:background .3s;}
 .service-card:hover{background:var(--card);}
@@ -342,6 +349,7 @@ footer{position:relative;z-index:1;padding:32px 48px;border-top:1px solid var(--
 
 <!-- ABOUT -->
 <section id="about" class="ai-section">
+  <div class="grid-bg" id="aboutGrid" aria-hidden="true"></div>
   <div class="section-header rv">
     <div><div class="section-label" data-i18n data-ua="Хто я">Who I am</div><h2 class="section-title" data-i18n data-ua="Про мене">About</h2></div>
     <div class="section-count" data-i18n data-ua="01 — профіль">01 — profile</div>
@@ -601,6 +609,40 @@ document.querySelectorAll('.filter-btn').forEach(b=>{b.addEventListener('click',
   const f=b.dataset.filter;
   document.querySelectorAll('.site-row').forEach(c=>{c.style.display=(f==='all'||c.dataset.cat===f)?'':'none';});
 });});
+
+// interactive grid effect (About)
+(function(){
+  const sec=document.getElementById('about');
+  const grid=document.getElementById('aboutGrid');
+  if(!sec||!grid)return;
+  const CELL=46,GAP=2;let cols=0,rows=0,cells=[];
+  function build(){
+    const w=sec.clientWidth,h=sec.clientHeight;
+    cols=Math.ceil(w/(CELL+GAP));rows=Math.ceil(h/(CELL+GAP));
+    grid.style.gridTemplateColumns='repeat('+cols+','+CELL+'px)';
+    grid.style.gridAutoRows=CELL+'px';
+    grid.innerHTML='';cells=[];
+    const total=cols*rows;
+    const frag=document.createDocumentFragment();
+    for(let i=0;i<total;i++){const d=document.createElement('div');d.className='grid-cell';frag.appendChild(d);cells.push(d);}
+    grid.appendChild(frag);
+  }
+  function activate(idx){
+    const c=cells[idx];if(!c)return;
+    c.classList.add('active');clearTimeout(c._t);
+    c._t=setTimeout(()=>c.classList.remove('active'),90);
+  }
+  sec.addEventListener('mousemove',e=>{
+    const r=grid.getBoundingClientRect();
+    const x=e.clientX-r.left,y=e.clientY-r.top;
+    if(x<0||y<0)return;
+    const col=Math.floor(x/(CELL+GAP)),row=Math.floor(y/(CELL+GAP));
+    if(col<0||col>=cols||row<0||row>=rows)return;
+    activate(row*cols+col);
+  });
+  build();
+  let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(build,200);});
+})();
 
 // particle sphere
 (function(){

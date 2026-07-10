@@ -152,6 +152,12 @@ section{position:relative;z-index:1;padding:100px 48px;}
 .service-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--accent);transition:width .4s ease;}
 .service-card:hover::after{width:100%;}
 
+@media(max-width:900px){
+  .service-card.rv.vis::after{width:100%;}
+  .service-card.rv.vis .service-icon{box-shadow:var(--glow);border-color:var(--accent);}
+  .service-card.rv.vis .service-num{color:var(--accent);}
+}
+
 .process-track{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
 .pstep{padding:40px 28px 36px;border:1px solid var(--border);border-right:none;position:relative;z-index:1;background:var(--black);
   opacity:0;transform:translateY(32px);transition:opacity .6s ease,transform .6s ease,background .25s;}
@@ -437,6 +443,10 @@ footer{position:relative;z-index:1;padding:32px 48px;border-top:1px solid var(--
     <span class="flag-badge" data-i18n data-ua="Дизайн · Frontend · Backend">Design · Frontend · Backend</span>
   </div>
   <div class="flag-stack rv">Python · FastAPI · Celery · Redis · React TWA · Facebook Marketing API · Higgsfield AI · n8n</div>
+  <div class="flag-links rv" style="display:flex;gap:32px;flex-wrap:wrap;margin-bottom:20px;">
+    <a href="https://fx-socialclub.github.io/FB_bot" target="_blank" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.06em;color:var(--lgrey);text-decoration:none;display:flex;align-items:center;gap:10px;transition:color .2s;"><span style="color:var(--accent);font-size:14px;">↗</span><span><span style="color:var(--grey);">Web View:</span> fx-socialclub.github.io/FB_bot</span></a>
+    <a href="https://t.me/fxsocialclub_bot/FXSC" target="_blank" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.06em;color:var(--lgrey);text-decoration:none;display:flex;align-items:center;gap:10px;transition:color .2s;"><span style="color:var(--accent);font-size:14px;">✈</span><span><span style="color:var(--grey);">Telegram Mini App:</span> @fxsocialclub_bot/FXSC</span></a>
+  </div>
   <p class="flag-desc rv" data-i18n data-ua="Платформа автоматизації для Facebook Ads арбітражу — керування 11 кабінетами через Telegram Mini App (WebView) з 5 AI-агентами. Масштабувати робочу зв'язку або зупинити неефективний ad set в один тап, прямо з телефону.">An automation platform for Facebook Ads media buying — managing 11 ad cabinets through a Telegram Mini App (WebView) with 5 AI agents. Scale a winning combo or kill an underperforming ad set in one tap, straight from the phone.</p>
 
   <div class="agents-grid">

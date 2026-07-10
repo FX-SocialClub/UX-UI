@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FX SOCIAL CLUB — UX/UI Designer & AI Automation Engineer</title>
+<title>Vadim M. — UX/UI Designer & AI Automation Engineer</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -20,14 +20,12 @@ body::before{content:'';position:fixed;inset:0;z-index:0;
   background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
   background-size:60px 60px;pointer-events:none;}
 
-/* cursor */
 .c-dot,.c-ring{position:fixed;top:0;left:0;z-index:2000;pointer-events:none;border-radius:50%;transform:translate(-50%,-50%);}
 .c-dot{width:6px;height:6px;background:var(--accent);}
 .c-ring{width:32px;height:32px;border:1px solid rgba(200,255,0,0.4);transition:width .2s,height .2s,border-color .2s;}
 .c-ring.big{width:52px;height:52px;border-color:var(--accent);}
 @media(max-width:900px){.c-dot,.c-ring{display:none;}}
 
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;padding:0 48px;
   display:flex;align-items:center;justify-content:space-between;
   background:rgba(0,0,0,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
@@ -37,12 +35,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;padding:0 48px;
   font-family:'Space Mono',monospace;font-weight:700;font-size:16px;
   box-shadow:0 0 16px rgba(200,255,0,0.25), inset 0 0 12px rgba(200,255,0,0.05);}
 .nav-logo-text{font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:var(--white);letter-spacing:0.1em;}
-.nav-links{display:flex;align-items:center;gap:36px;}
+.nav-right{display:flex;align-items:center;gap:28px;}
+.nav-links{display:flex;align-items:center;gap:34px;}
 .nav-links a{font-size:12px;color:var(--lgrey);text-decoration:none;letter-spacing:0.06em;font-family:'Space Mono',monospace;transition:color .2s;}
 .nav-links a:hover{color:var(--white);}
 .nav-cta{background:transparent!important;border:1px solid var(--border2)!important;color:var(--white)!important;
-  padding:8px 20px;border-radius:4px;font-size:12px!important;cursor:pointer;transition:all .2s!important;}
+  padding:8px 20px;border-radius:4px;font-size:12px!important;cursor:pointer;transition:all .2s!important;text-decoration:none;font-family:'Space Mono',monospace;}
 .nav-cta:hover{border-color:var(--accent)!important;color:var(--accent)!important;}
+
+.lang-switch{display:flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:12px;}
+.lang-btn{background:none;border:none;color:var(--grey);cursor:pointer;letter-spacing:0.08em;padding:2px 2px;transition:color .2s;font-family:inherit;font-size:12px;}
+.lang-btn:hover{color:var(--white);}
+.lang-btn.active{color:var(--accent);}
+.lang-div{color:var(--border2);}
+
 .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
 .nav-burger span{display:block;width:22px;height:1.5px;background:var(--white);transition:all .3s;}
 .nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
@@ -58,18 +64,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;padding:0 48px;
 
 .scroll-line{position:fixed;top:0;left:0;height:2px;z-index:1000;background:var(--accent);box-shadow:var(--glow);width:0%;}
 
-/* HERO */
 .hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 48px 80px;}
 .hero-label{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;color:var(--accent);
-  text-transform:uppercase;margin-bottom:28px;display:flex;align-items:center;gap:10px;}
+  text-transform:uppercase;margin-bottom:26px;display:flex;align-items:center;gap:10px;}
 .hero-label::before{content:'';width:24px;height:1px;background:var(--accent);box-shadow:var(--glow);}
-.hero-title{font-size:clamp(42px,7vw,92px);font-weight:700;line-height:1.0;letter-spacing:-0.03em;max-width:980px;margin-bottom:32px;}
+.hero-title{font-size:clamp(52px,9vw,120px);font-weight:700;line-height:0.95;letter-spacing:-0.03em;margin-bottom:22px;}
 .hero-title .line{display:block;overflow:hidden;}
 .hero-title .word{display:inline-block;transform:translateY(110%);transition:transform .8s cubic-bezier(.16,1,.3,1);}
 .hero-title .word.vis{transform:translateY(0);}
-.hero-title .accent-word{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,0.3);}
 .hero-title .accent-hl{color:var(--accent);text-shadow:0 0 40px rgba(200,255,0,0.4);}
-.hero-sub{font-size:16px;color:var(--lgrey);max-width:580px;line-height:1.7;margin-bottom:52px;}
+.hero-role{font-size:clamp(18px,2.4vw,28px);font-weight:500;letter-spacing:-0.01em;margin-bottom:14px;color:var(--white);}
+.hero-role .sep{color:var(--accent);margin:0 12px;font-weight:400;}
+.hero-loc{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.1em;color:var(--lgrey);margin-bottom:34px;}
+.hero-sub{font-size:16px;color:var(--lgrey);max-width:600px;line-height:1.7;margin-bottom:48px;}
 .hero-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
 .btn-primary{background:var(--accent);color:#000;padding:14px 32px;border-radius:4px;font-weight:700;
   font-size:13px;text-decoration:none;letter-spacing:0.04em;box-shadow:0 0 32px rgba(200,255,0,0.3);transition:all .2s;}
@@ -86,11 +93,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;padding:0 48px;
 .hero-deco{position:absolute;top:50%;right:32px;transform:translateY(-50%);width:710px;height:710px;z-index:0;}
 #particleCanvas{display:block;}
 @media(max-width:900px){
-  .hero-deco{width:546px;height:546px;top:42%;left:50%;right:auto;transform:translate(-50%,-50%);opacity:0.55;}
+  .hero-deco{width:546px;height:546px;top:42%;left:50%;right:auto;transform:translate(-50%,-50%);opacity:0.5;}
   #particleCanvas{width:546px!important;height:546px!important;}
 }
 @media(max-width:480px){
-  .hero-deco{width:440px;height:440px;opacity:0.5;}
+  .hero-deco{width:440px;height:440px;opacity:0.42;}
   #particleCanvas{width:440px!important;height:440px!important;}
 }
 
@@ -104,14 +111,12 @@ section{position:relative;z-index:1;padding:100px 48px;}
 .rv.vis{opacity:1;transform:none;}
 .d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}.d4{transition-delay:.32s;}.d5{transition-delay:.4s;}
 
-/* MARQUEE */
 .marquee-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;padding:18px 0;position:relative;z-index:1;}
 .marquee-track{display:flex;gap:0;animation:marquee-go 34s linear infinite;white-space:nowrap;}
 .marquee-item{display:inline-flex;align-items:center;gap:16px;padding:0 32px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.15em;color:var(--grey);text-transform:uppercase;}
 .marquee-dot{width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0;}
 @keyframes marquee-go{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-/* ABOUT */
 .ai-section{background:var(--dark);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 .ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .ai-headline{font-size:clamp(28px,3vw,40px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin-bottom:20px;}
@@ -127,7 +132,6 @@ section{position:relative;z-index:1;padding:100px 48px;}
 .ai-metric-val span{color:var(--accent);}
 .ai-metric-label{font-size:12px;color:var(--grey);line-height:1.5;}
 
-/* SKILLS */
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
 .service-card{background:var(--black);padding:40px 36px;position:relative;overflow:hidden;transition:background .3s;}
 .service-card:hover{background:var(--card);}
@@ -141,7 +145,6 @@ section{position:relative;z-index:1;padding:100px 48px;}
 .service-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--accent);transition:width .4s ease;}
 .service-card:hover::after{width:100%;}
 
-/* EXPERIENCE / PROCESS */
 .process-track{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
 .pstep{padding:40px 28px 36px;border:1px solid var(--border);border-right:none;position:relative;z-index:1;background:var(--black);
   opacity:0;transform:translateY(32px);transition:opacity .6s ease,transform .6s ease,background .25s;}
@@ -158,7 +161,6 @@ section{position:relative;z-index:1;padding:100px 48px;}
 .ps-desc{font-size:13px;color:var(--lgrey);line-height:1.65;margin-bottom:20px;}
 .ps-tag{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.12em;color:var(--accent);text-transform:uppercase;border:1px solid var(--accent2);padding:4px 10px;border-radius:2px;display:inline-block;}
 
-/* FLAGSHIP */
 .flag{background:var(--dark);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 .flag-head{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:14px;}
 .flag-name{font-size:clamp(24px,3vw,34px);font-weight:700;letter-spacing:-0.02em;}
@@ -177,7 +179,6 @@ section{position:relative;z-index:1;padding:100px 48px;}
 .mrow-val span{color:var(--accent);}
 .mrow-lbl{font-size:11px;color:var(--grey);line-height:1.5;}
 
-/* CASES LIST */
 .sites-list{border:1px solid var(--border);background:var(--card);}
 .site-row{display:grid;grid-template-columns:60px 1fr auto 32px;align-items:center;gap:20px;padding:16px 24px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .2s;position:relative;}
 .site-row:last-child{border-bottom:none;}
@@ -206,7 +207,6 @@ section{position:relative;z-index:1;padding:100px 48px;}
   .site-num{font-size:9px;}
 }
 
-/* CTA */
 .cta-section{padding:120px 48px;text-align:center;position:relative;z-index:1;border-top:1px solid var(--border);}
 .cta-label{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;color:var(--accent);text-transform:uppercase;margin-bottom:24px;}
 .cta-title{font-size:clamp(32px,5vw,64px);font-weight:700;letter-spacing:-0.03em;line-height:1.05;margin-bottom:20px;}
@@ -230,6 +230,7 @@ footer{position:relative;z-index:1;padding:32px 48px;border-top:1px solid var(--
 }
 @media(max-width:900px){
   nav{padding:0 20px;}.nav-links{display:none;}.nav-burger{display:flex;}
+  .nav-right{gap:16px;}
   section{padding:70px 20px;}.hero{padding:100px 20px 80px;}.hero-stats{display:none;}
   .services-grid{grid-template-columns:1fr;}
   .ai-grid{grid-template-columns:1fr;gap:40px;}
@@ -245,7 +246,7 @@ footer{position:relative;z-index:1;padding:32px 48px;border-top:1px solid var(--
   .process-track{grid-template-columns:1fr;}
   .pstep{border-right:1px solid var(--border)!important;}
   .agents-grid{grid-template-columns:1fr;}
-  .hero-title{font-size:clamp(36px,9vw,60px);}
+  .hero-title{font-size:clamp(44px,13vw,72px);}
 }
 </style>
 </head>
@@ -258,47 +259,54 @@ footer{position:relative;z-index:1;padding:32px 48px;border-top:1px solid var(--
 <!-- NAV -->
 <nav>
   <a href="#home" class="nav-logo">
-    <div class="nav-logo-mark">FX</div>
-    <span class="nav-logo-text">FX SOCIAL CLUB</span>
+    <div class="nav-logo-mark">VM</div>
+    <span class="nav-logo-text">VADIM M.</span>
   </a>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#flagship">Flagship</a>
-    <a href="#work">Work</a>
-    <a href="https://t.me/FXSCXI" target="_blank" class="nav-cta">Contact</a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#about" data-i18n data-ua="Про мене">About</a>
+      <a href="#skills" data-i18n data-ua="Навички">Skills</a>
+      <a href="#experience" data-i18n data-ua="Досвід">Experience</a>
+      <a href="#flagship" data-i18n data-ua="Проєкт">Flagship</a>
+      <a href="#work" data-i18n data-ua="Роботи">Work</a>
+    </div>
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="us">US</button>
+      <span class="lang-div">/</span>
+      <button class="lang-btn" data-lang="ua">UA</button>
+    </div>
+    <a href="https://t.me/FXSCXI" target="_blank" class="nav-cta" data-i18n data-ua="Контакт">Contact</a>
   </div>
   <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#experience">Experience</a>
-  <a href="#flagship">Flagship</a>
-  <a href="#work">Work</a>
-  <a href="https://t.me/FXSCXI" target="_blank" class="m-cta">Contact via Telegram →</a>
+  <a href="#about" data-i18n data-ua="Про мене">About</a>
+  <a href="#skills" data-i18n data-ua="Навички">Skills</a>
+  <a href="#experience" data-i18n data-ua="Досвід">Experience</a>
+  <a href="#flagship" data-i18n data-ua="Проєкт">Flagship</a>
+  <a href="#work" data-i18n data-ua="Роботи">Work</a>
+  <a href="https://t.me/FXSCXI" target="_blank" class="m-cta" data-i18n data-ua="Написати в Telegram →">Contact via Telegram →</a>
 </div>
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-label">UX/UI Designer × AI Automation Engineer</div>
+  <div class="hero-label" data-i18n data-ua="UX/UI Дизайнер × AI Automation Engineer">UX/UI Designer × AI Automation Engineer</div>
   <h1 class="hero-title" id="heroTitle">
-    <span class="line"><span class="word">I&nbsp;design</span> <span class="word accent-word">interfaces</span></span>
-    <span class="line"><span class="word">and&nbsp;automate</span></span>
-    <span class="line"><span class="word accent-hl">the&nbsp;marketing.</span></span>
+    <span class="line"><span class="word">Vadim <span class="accent-hl">M.</span></span></span>
   </h1>
-  <p class="hero-sub">Middle UX/UI designer &amp; AI automation engineer with 2+ years of experience. I build product interfaces from scratch and automate marketing pipelines — from wireframe to deploy. Design thinking meets a real technical stack: Python, FastAPI, n8n, React, Three.js.</p>
+  <div class="hero-role" data-i18n data-ua="UX/UI Дизайнер <span class='sep'>|</span> AI Automation">UX/UI Designer <span class="sep">|</span> AI Automation</div>
+  <div class="hero-loc" data-i18n data-ua="📍 Київ, Україна">📍 Kyiv, Ukraine</div>
+  <p class="hero-sub" data-i18n data-ua="Middle+ UX/UI дизайнер та AI Automation Engineer з 2+ роками досвіду. Будую продуктові інтерфейси з нуля та автоматизую маркетингові процеси — від wireframe до деплою. Дизайн-мислення в парі з реальним технічним стеком: Python, FastAPI, n8n, React, Three.js.">Middle+ UX/UI designer &amp; AI automation engineer with 2+ years of experience. I build product interfaces from scratch and automate marketing pipelines — from wireframe to deploy. Design thinking meets a real technical stack: Python, FastAPI, n8n, React, Three.js.</p>
   <div class="hero-actions">
-    <a href="#work" class="btn-primary">View work</a>
-    <a href="https://t.me/FXSCXI" target="_blank" class="btn-secondary">Talk to me on Telegram</a>
+    <a href="#work" class="btn-primary" data-i18n data-ua="Дивитись роботи">View work</a>
+    <a href="https://t.me/FXSCXI" target="_blank" class="btn-secondary" data-i18n data-ua="Написати в Telegram">Talk to me on Telegram</a>
   </div>
   <div class="hero-deco" aria-hidden="true"><canvas id="particleCanvas" width="420" height="420"></canvas></div>
   <div class="hero-stats">
-    <div class="stat-item"><div class="stat-num">2<span>+</span></div><div class="stat-label">Years exp</div></div>
-    <div class="stat-item"><div class="stat-num">11<span>+</span></div><div class="stat-label">Live projects</div></div>
-    <div class="stat-item"><div class="stat-num">5<span>×</span></div><div class="stat-label">AI agents built</div></div>
+    <div class="stat-item"><div class="stat-num">2<span>+</span></div><div class="stat-label" data-i18n data-ua="Років досвіду">Years exp</div></div>
+    <div class="stat-item"><div class="stat-num">11<span>+</span></div><div class="stat-label" data-i18n data-ua="Живих проєктів">Live projects</div></div>
+    <div class="stat-item"><div class="stat-num">5<span>×</span></div><div class="stat-label" data-i18n data-ua="AI-агентів">AI agents built</div></div>
   </div>
 </section>
 
@@ -335,27 +343,27 @@ footer{position:relative;z-index:1;padding:32px 48px;border-top:1px solid var(--
 <!-- ABOUT -->
 <section id="about" class="ai-section">
   <div class="section-header rv">
-    <div><div class="section-label">Who I am</div><h2 class="section-title">About</h2></div>
-    <div class="section-count">01 — profile</div>
+    <div><div class="section-label" data-i18n data-ua="Хто я">Who I am</div><h2 class="section-title" data-i18n data-ua="Про мене">About</h2></div>
+    <div class="section-count" data-i18n data-ua="01 — профіль">01 — profile</div>
   </div>
   <div class="ai-grid">
     <div class="ai-left rv">
-      <h2 class="ai-headline">A designer who<br>ships and <em>automates</em><br>the whole pipeline</h2>
-      <p class="ai-text">I don&rsquo;t just hand off mockups — I build the interface, wire the animations and stand up the automation behind it. Full cycle: user research, wireframing, prototyping, front-end and deploy, without micromanagement.</p>
+      <h2 class="ai-headline" data-i18n data-ua="Дизайнер, який деплоїть<br>і <em>автоматизує</em><br>увесь пайплайн">A designer who<br>ships and <em>automates</em><br>the whole pipeline</h2>
+      <p class="ai-text" data-i18n data-ua="Я не просто віддаю макети — я будую інтерфейс, роблю анімації та піднімаю автоматизацію під ним. Повний цикл: user research, wireframing, прототипування, фронтенд і деплой, без мікроменеджменту.">I don&rsquo;t just hand off mockups — I build the interface, wire the animations and stand up the automation behind it. Full cycle: user research, wireframing, prototyping, front-end and deploy, without micromanagement.</p>
       <ul class="ai-list">
-        <li>Full-cycle landing pages: crypto, iGaming, invest, SaaS, cleaning, moving</li>
-        <li>Telegram Mini App with 5 AI agents &amp; Facebook Ads API</li>
-        <li>Three.js particle systems, scroll-scrubbed video, Canvas animation</li>
-        <li>n8n / Python funnel automation, kill-rules, budget scaling</li>
-        <li>AI creative generation via Midjourney &amp; Higgsfield AI</li>
+        <li data-i18n data-ua="Повноциклові лендінги: crypto, iGaming, invest, SaaS, клінінг, moving">Full-cycle landing pages: crypto, iGaming, invest, SaaS, cleaning, moving</li>
+        <li data-i18n data-ua="Telegram Mini App з 5 AI-агентами та Facebook Ads API">Telegram Mini App with 5 AI agents &amp; Facebook Ads API</li>
+        <li data-i18n data-ua="Three.js particle-системи, scroll-scrubbed відео, Canvas-анімації">Three.js particle systems, scroll-scrubbed video, Canvas animation</li>
+        <li data-i18n data-ua="n8n / Python автоматизація воронок, kill-rules, масштабування бюджетів">n8n / Python funnel automation, kill-rules, budget scaling</li>
+        <li data-i18n data-ua="Генерація AI-крео через Midjourney та Higgsfield AI">AI creative generation via Midjourney &amp; Higgsfield AI</li>
       </ul>
-      <a href="#skills" class="btn-primary">See my skills</a>
+      <a href="#skills" class="btn-primary" data-i18n data-ua="Мої навички">See my skills</a>
     </div>
     <div class="ai-right rv d2">
       <div class="ai-metric"><div class="ai-metric-val">FE</div><div class="ai-metric-label">HTML · CSS · JS<br>React · Three.js</div></div>
       <div class="ai-metric"><div class="ai-metric-val">AI</div><div class="ai-metric-label">n8n · Python<br>Higgsfield AI</div></div>
-      <div class="ai-metric"><div class="ai-metric-val">UX</div><div class="ai-metric-label">research · UI Kit<br>prototyping</div></div>
-      <div class="ai-metric"><div class="ai-metric-val">B2</div><div class="ai-metric-label">English<br>Upper Intermediate</div></div>
+      <div class="ai-metric"><div class="ai-metric-val">UX</div><div class="ai-metric-label" data-i18n data-ua="research · UI Kit<br>прототипи">research · UI Kit<br>prototyping</div></div>
+      <div class="ai-metric"><div class="ai-metric-val">B2</div><div class="ai-metric-label" data-i18n data-ua="Англійська<br>Upper Intermediate">English<br>Upper Intermediate</div></div>
     </div>
   </div>
 </section>
@@ -363,48 +371,48 @@ footer{position:relative;z-index:1;padding:32px 48px;border-top:1px solid var(--
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-header rv">
-    <div><div class="section-label">What I do</div><h2 class="section-title">Skills</h2></div>
-    <div class="section-count">06 — areas</div>
+    <div><div class="section-label" data-i18n data-ua="Що я вмію">What I do</div><h2 class="section-title" data-i18n data-ua="Навички">Skills</h2></div>
+    <div class="section-count" data-i18n data-ua="06 — напрямків">06 — areas</div>
   </div>
   <div class="services-grid">
-    <div class="service-card rv"><div class="service-num">01</div><div class="service-icon">◈</div><div class="service-name">UX/UI Design &amp; Prototyping</div><p class="service-desc">Designing interfaces, UI Kits and landing pages from concept to release. Portfolio across crypto, iGaming, invest, SaaS, cleaning and moving.</p><div class="service-tags"><span class="svc-tag">Figma</span><span class="svc-tag">Photoshop</span><span class="svc-tag">Illustrator</span></div></div>
-    <div class="service-card rv d1"><div class="service-num">02</div><div class="service-icon">◎</div><div class="service-name">User-Centered Design</div><p class="service-desc">User research, wireframing, prototyping and an A/B-driven approach — end to end, from concept to shipped product without micromanagement.</p><div class="service-tags"><span class="svc-tag">Research</span><span class="svc-tag">Wireframes</span><span class="svc-tag">A/B</span></div></div>
-    <div class="service-card rv d2"><div class="service-num">03</div><div class="service-icon">▦</div><div class="service-name">Design Systems</div><p class="service-desc">Building UI Kits, component architecture and fully responsive layouts that hold up across every screen size.</p><div class="service-tags"><span class="svc-tag">UI Kit</span><span class="svc-tag">Components</span><span class="svc-tag">Responsive</span></div></div>
-    <div class="service-card rv d1"><div class="service-num">04</div><div class="service-icon">⬡</div><div class="service-name">Frontend</div><p class="service-desc">Hand-coded markup and animation. Self-contained HTML, particle systems, scroll-scrubbed video, Canvas mechanics — I build it myself.</p><div class="service-tags"><span class="svc-tag">HTML5</span><span class="svc-tag">SCSS</span><span class="svc-tag">React</span><span class="svc-tag">Three.js</span><span class="svc-tag">Canvas</span></div></div>
-    <div class="service-card rv d2"><div class="service-num">05</div><div class="service-icon">⬕</div><div class="service-name">AI &amp; Automation</div><p class="service-desc">n8n + Python funnel automation, full-stack integrations, AI creative generation and content pipelines that run themselves.</p><div class="service-tags"><span class="svc-tag">n8n</span><span class="svc-tag">Python</span><span class="svc-tag">Higgsfield AI</span><span class="svc-tag">Full Stack</span></div></div>
-    <div class="service-card rv d3"><div class="service-num">06</div><div class="service-icon">✦</div><div class="service-name">Agile &amp; Dev Collab</div><p class="service-desc">Working inside Agile teams, tight collaboration with developers and ownership of the full product cycle.</p><div class="service-tags"><span class="svc-tag">Agile</span><span class="svc-tag">Collab</span><span class="svc-tag">Full Cycle</span></div></div>
+    <div class="service-card rv"><div class="service-num">01</div><div class="service-icon">◈</div><div class="service-name" data-i18n data-ua="UX/UI Дизайн та прототипування">UX/UI Design &amp; Prototyping</div><p class="service-desc" data-i18n data-ua="Проєктування інтерфейсів, UI Kit та лендінгів від концепції до релізу. Портфоліо: crypto, iGaming, invest, SaaS, клінінг, moving.">Designing interfaces, UI Kits and landing pages from concept to release. Portfolio across crypto, iGaming, invest, SaaS, cleaning and moving.</p><div class="service-tags"><span class="svc-tag">Figma</span><span class="svc-tag">Photoshop</span><span class="svc-tag">Illustrator</span></div></div>
+    <div class="service-card rv d1"><div class="service-num">02</div><div class="service-icon">◎</div><div class="service-name">User-Centered Design</div><p class="service-desc" data-i18n data-ua="User research, wireframing, прототипування та A/B-підхід — від концепції до релізу без мікроменеджменту.">User research, wireframing, prototyping and an A/B-driven approach — end to end, from concept to shipped product without micromanagement.</p><div class="service-tags"><span class="svc-tag">Research</span><span class="svc-tag">Wireframes</span><span class="svc-tag">A/B</span></div></div>
+    <div class="service-card rv d2"><div class="service-num">03</div><div class="service-icon">▦</div><div class="service-name">Design Systems</div><p class="service-desc" data-i18n data-ua="Побудова UI Kit, компонентна архітектура та повністю адаптивна верстка під будь-який екран.">Building UI Kits, component architecture and fully responsive layouts that hold up across every screen size.</p><div class="service-tags"><span class="svc-tag">UI Kit</span><span class="svc-tag">Components</span><span class="svc-tag">Responsive</span></div></div>
+    <div class="service-card rv d1"><div class="service-num">04</div><div class="service-icon">⬡</div><div class="service-name">Frontend</div><p class="service-desc" data-i18n data-ua="Верстка та анімації власноруч. Self-contained HTML, particle-системи, scroll-scrubbed відео, Canvas-механіки — роблю сам.">Hand-coded markup and animation. Self-contained HTML, particle systems, scroll-scrubbed video, Canvas mechanics — I build it myself.</p><div class="service-tags"><span class="svc-tag">HTML5</span><span class="svc-tag">SCSS</span><span class="svc-tag">React</span><span class="svc-tag">Three.js</span><span class="svc-tag">Canvas</span></div></div>
+    <div class="service-card rv d2"><div class="service-num">05</div><div class="service-icon">⬕</div><div class="service-name" data-i18n data-ua="AI та автоматизація">AI &amp; Automation</div><p class="service-desc" data-i18n data-ua="n8n + Python автоматизація воронок, full-stack інтеграції, генерація AI-крео та контент-пайплайни, що працюють самі.">n8n + Python funnel automation, full-stack integrations, AI creative generation and content pipelines that run themselves.</p><div class="service-tags"><span class="svc-tag">n8n</span><span class="svc-tag">Python</span><span class="svc-tag">Higgsfield AI</span><span class="svc-tag">Full Stack</span></div></div>
+    <div class="service-card rv d3"><div class="service-num">06</div><div class="service-icon">✦</div><div class="service-name" data-i18n data-ua="Agile та Dev Collab">Agile &amp; Dev Collab</div><p class="service-desc" data-i18n data-ua="Робота в Agile-командах, щільна взаємодія з розробниками та володіння повним циклом продукту.">Working inside Agile teams, tight collaboration with developers and ownership of the full product cycle.</p><div class="service-tags"><span class="svc-tag">Agile</span><span class="svc-tag">Collab</span><span class="svc-tag" data-i18n data-ua="Повний цикл">Full Cycle</span></div></div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience" class="ai-section">
   <div class="section-header rv">
-    <div><div class="section-label">Where I&rsquo;ve worked</div><h2 class="section-title">Experience</h2></div>
-    <div class="section-count">FX Social Club · 2023 — now</div>
+    <div><div class="section-label" data-i18n data-ua="Де я працював">Where I&rsquo;ve worked</div><h2 class="section-title" data-i18n data-ua="Досвід">Experience</h2></div>
+    <div class="section-count" data-i18n data-ua="FX Social Club · 2023 — зараз">FX Social Club · 2023 — now</div>
   </div>
   <div class="process-track" id="processTrack">
     <div class="pstep">
-      <div class="ps-dot"></div><div class="ps-num">01 — DESIGN</div>
-      <div class="ps-title">Landing pages, full cycle</div>
-      <p class="ps-desc">Crypto exchange, cleaning service, moving company, SaaS — designed and shipped end to end as self-contained HTML.</p>
+      <div class="ps-dot"></div><div class="ps-num" data-i18n data-ua="01 — ДИЗАЙН">01 — DESIGN</div>
+      <div class="ps-title" data-i18n data-ua="Лендінги, повний цикл">Landing pages, full cycle</div>
+      <p class="ps-desc" data-i18n data-ua="Crypto exchange, клінінг, moving, SaaS — спроєктовано й задеплоєно від початку до кінця як self-contained HTML.">Crypto exchange, cleaning service, moving company, SaaS — designed and shipped end to end as self-contained HTML.</p>
       <span class="ps-tag">UX/UI · Frontend</span>
     </div>
     <div class="pstep">
-      <div class="ps-dot"></div><div class="ps-num">02 — PRODUCT</div>
+      <div class="ps-dot"></div><div class="ps-num" data-i18n data-ua="02 — ПРОДУКТ">02 — PRODUCT</div>
       <div class="ps-title">Telegram Mini App</div>
-      <p class="ps-desc">Designed a Mini App with 5 AI agents and Facebook Ads API managing 11 ad cabinets from a phone.</p>
+      <p class="ps-desc" data-i18n data-ua="Спроєктував Mini App з 5 AI-агентами та Facebook Ads API для керування 11 кабінетами з телефону.">Designed a Mini App with 5 AI agents and Facebook Ads API managing 11 ad cabinets from a phone.</p>
       <span class="ps-tag">TWA · API</span>
     </div>
     <div class="pstep">
       <div class="ps-dot"></div><div class="ps-num">03 — MOTION</div>
-      <div class="ps-title">Advanced FE effects</div>
-      <p class="ps-desc">Three.js particle systems, scroll-scrubbed video backgrounds, Canvas-based interactions, self-contained builds.</p>
+      <div class="ps-title" data-i18n data-ua="Advanced FE ефекти">Advanced FE effects</div>
+      <p class="ps-desc" data-i18n data-ua="Three.js particle-системи, scroll-scrubbed відео-фони, Canvas-взаємодії, self-contained білди.">Three.js particle systems, scroll-scrubbed video backgrounds, Canvas-based interactions, self-contained builds.</p>
       <span class="ps-tag">Three.js · Canvas</span>
     </div>
     <div class="pstep">
-      <div class="ps-dot"></div><div class="ps-num">04 — AUTOMATION</div>
-      <div class="ps-title">n8n / Python funnels</div>
-      <p class="ps-desc">Funnel automation, CPL/CPM kill-rules, budget scaling and AI creative generation via Midjourney &amp; Higgsfield AI.</p>
+      <div class="ps-dot"></div><div class="ps-num" data-i18n data-ua="04 — АВТОМАТИЗАЦІЯ">04 — AUTOMATION</div>
+      <div class="ps-title" data-i18n data-ua="n8n / Python воронки">n8n / Python funnels</div>
+      <p class="ps-desc" data-i18n data-ua="Автоматизація воронок, CPL/CPM kill-rules, масштабування бюджетів та генерація AI-крео через Midjourney і Higgsfield AI.">Funnel automation, CPL/CPM kill-rules, budget scaling and AI creative generation via Midjourney &amp; Higgsfield AI.</p>
       <span class="ps-tag">n8n · Python</span>
     </div>
   </div>
@@ -413,94 +421,94 @@ footer{position:relative;z-index:1;padding:32px 48px;border-top:1px solid var(--
 <!-- FLAGSHIP -->
 <section id="flagship" class="flag">
   <div class="section-header rv">
-    <div><div class="section-label">Flagship project</div><h2 class="section-title">FX Social Club</h2></div>
-    <div class="section-count">02 — platform</div>
+    <div><div class="section-label" data-i18n data-ua="Флагманський проєкт">Flagship project</div><h2 class="section-title">FX Social Club</h2></div>
+    <div class="section-count" data-i18n data-ua="02 — платформа">02 — platform</div>
   </div>
   <div class="flag-head rv">
     <div class="flag-name">Telegram Mini App + AI Automation Platform</div>
-    <span class="flag-badge">Design · Frontend · Backend</span>
+    <span class="flag-badge" data-i18n data-ua="Дизайн · Frontend · Backend">Design · Frontend · Backend</span>
   </div>
   <div class="flag-stack rv">Python · FastAPI · Celery · Redis · React TWA · Facebook Marketing API · Higgsfield AI · n8n</div>
-  <p class="flag-desc rv">An automation platform for Facebook Ads media buying — managing 11 ad cabinets through a Telegram Mini App (WebView) with 5 AI agents. Scale a winning combo or kill an underperforming ad set in one tap, straight from the phone.</p>
+  <p class="flag-desc rv" data-i18n data-ua="Платформа автоматизації для Facebook Ads арбітражу — керування 11 кабінетами через Telegram Mini App (WebView) з 5 AI-агентами. Масштабувати робочу зв'язку або зупинити неефективний ad set в один тап, прямо з телефону.">An automation platform for Facebook Ads media buying — managing 11 ad cabinets through a Telegram Mini App (WebView) with 5 AI agents. Scale a winning combo or kill an underperforming ad set in one tap, straight from the phone.</p>
 
   <div class="agents-grid">
-    <div class="agent rv"><div class="agent-num">01</div><div class="agent-name">Buyer FB Agent</div><p class="agent-desc">Automated media buying, real-time bid and budget management.</p></div>
-    <div class="agent rv d1"><div class="agent-num">02</div><div class="agent-name">Spy Checker</div><p class="agent-desc">Competitor monitoring via spy services, creative &amp; combo analysis.</p></div>
-    <div class="agent rv d2"><div class="agent-num">03</div><div class="agent-name">Creative Generator</div><p class="agent-desc">Video &amp; static creatives generated through the Higgsfield AI API.</p></div>
-    <div class="agent rv d3"><div class="agent-num">04</div><div class="agent-name">Landing Generator</div><p class="agent-desc">Auto-generated landings for offers, UX/UI design included.</p></div>
-    <div class="agent rv d4"><div class="agent-num">05</div><div class="agent-name">HEAD Agent</div><p class="agent-desc">Orchestrator — coordinates agents, prioritizes, single control point.</p></div>
+    <div class="agent rv"><div class="agent-num">01</div><div class="agent-name">Buyer FB Agent</div><p class="agent-desc" data-i18n data-ua="Автоматичний закуп, керування ставками та бюджетами в реальному часі.">Automated media buying, real-time bid and budget management.</p></div>
+    <div class="agent rv d1"><div class="agent-num">02</div><div class="agent-name">Spy Checker</div><p class="agent-desc" data-i18n data-ua="Моніторинг конкурентів через spy-сервіси, аналіз крео та зв'язок.">Competitor monitoring via spy services, creative &amp; combo analysis.</p></div>
+    <div class="agent rv d2"><div class="agent-num">03</div><div class="agent-name">Creative Generator</div><p class="agent-desc" data-i18n data-ua="Відео та статичні крео через Higgsfield AI API.">Video &amp; static creatives generated through the Higgsfield AI API.</p></div>
+    <div class="agent rv d3"><div class="agent-num">04</div><div class="agent-name">Landing Generator</div><p class="agent-desc" data-i18n data-ua="Автогенерація лендінгів під офери, UX/UI дизайн включно.">Auto-generated landings for offers, UX/UI design included.</p></div>
+    <div class="agent rv d4"><div class="agent-num">05</div><div class="agent-name">HEAD Agent</div><p class="agent-desc" data-i18n data-ua="Оркестратор — координує агентів, пріоритизує, єдина точка керування.">Orchestrator — coordinates agents, prioritizes, single control point.</p></div>
   </div>
 
   <div class="metrics-row">
-    <div class="mrow rv"><div class="mrow-val">11<span>×</span></div><div class="mrow-lbl">FB ad cabinets<br>real-time metrics</div></div>
-    <div class="mrow rv d1"><div class="mrow-val">ROAS<span> · CPL</span></div><div class="mrow-lbl">CR · CPM · CPC · CTR<br>tracked live</div></div>
-    <div class="mrow rv d2"><div class="mrow-val">GEO</div><div class="mrow-lbl">day-by-day analytics<br>status &amp; block alerts</div></div>
-    <div class="mrow rv d3"><div class="mrow-val">1<span>-tap</span></div><div class="mrow-lbl">kill / scale<br>anti-detect infra</div></div>
+    <div class="mrow rv"><div class="mrow-val">11<span>×</span></div><div class="mrow-lbl" data-i18n data-ua="FB кабінетів<br>real-time метрики">FB ad cabinets<br>real-time metrics</div></div>
+    <div class="mrow rv d1"><div class="mrow-val">ROAS<span> · CPL</span></div><div class="mrow-lbl" data-i18n data-ua="CR · CPM · CPC · CTR<br>у реальному часі">CR · CPM · CPC · CTR<br>tracked live</div></div>
+    <div class="mrow rv d2"><div class="mrow-val">GEO</div><div class="mrow-lbl" data-i18n data-ua="аналітика по днях<br>статуси та алерти">day-by-day analytics<br>status &amp; block alerts</div></div>
+    <div class="mrow rv d3"><div class="mrow-val">1<span>-tap</span></div><div class="mrow-lbl" data-i18n data-ua="стоп / скейл<br>антидетект інфра">kill / scale<br>anti-detect infra</div></div>
   </div>
 </section>
 
 <!-- WORK -->
 <section id="work">
   <div class="section-header rv">
-    <div><div class="section-label">Selected work</div><h2 class="section-title">Case studies</h2></div>
-    <div class="section-count">11 — live pages</div>
+    <div><div class="section-label" data-i18n data-ua="Обрані роботи">Selected work</div><h2 class="section-title" data-i18n data-ua="Кейси">Case studies</h2></div>
+    <div class="section-count" data-i18n data-ua="11 — живих сторінок">11 — live pages</div>
   </div>
 
   <div class="sites-filter rv">
-    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn active" data-filter="all" data-i18n data-ua="Всі">All</button>
     <button class="filter-btn" data-filter="crypto">Crypto</button>
-    <button class="filter-btn" data-filter="service">Service</button>
+    <button class="filter-btn" data-filter="service" data-i18n data-ua="Сервіс">Service</button>
     <button class="filter-btn" data-filter="moving">Moving</button>
-    <button class="filter-btn" data-filter="case">Cases</button>
+    <button class="filter-btn" data-filter="case" data-i18n data-ua="Кейси">Cases</button>
   </div>
 
   <div class="sites-list" id="sitesGrid">
     <a href="https://fx-socialclub.github.io/Crypto_Exchange/" target="_blank" class="site-row" data-cat="crypto">
       <span class="site-num">01 / T1</span>
       <div class="site-info"><div class="site-title">Crypto Exchange</div><div class="site-url">fx-socialclub.github.io/Crypto_Exchange/</div></div>
-      <div class="site-tags"><span class="site-tag tier1">Flagship</span><span class="site-tag">Crypto</span><span class="site-tag">Three.js</span></div>
+      <div class="site-tags"><span class="site-tag tier1" data-i18n data-ua="Флагман">Flagship</span><span class="site-tag">Crypto</span><span class="site-tag">Three.js</span></div>
       <span class="site-arrow">↗</span>
     </a>
     <a href="https://fx-socialclub.github.io/Case1/" target="_blank" class="site-row" data-cat="case">
       <span class="site-num">02 / CASE</span>
-      <div class="site-info"><div class="site-title">Case Study 01</div><div class="site-url">fx-socialclub.github.io/Case1/</div></div>
-      <div class="site-tags"><span class="site-tag">Landing</span><span class="site-tag">Frontend</span></div>
+      <div class="site-info"><div class="site-title" data-i18n data-ua="Кейс 01">Case Study 01</div><div class="site-url">fx-socialclub.github.io/Case1/</div></div>
+      <div class="site-tags"><span class="site-tag" data-i18n data-ua="Лендінг">Landing</span><span class="site-tag">Frontend</span></div>
       <span class="site-arrow">↗</span>
     </a>
     <a href="https://fx-socialclub.github.io/Case2/" target="_blank" class="site-row" data-cat="case">
       <span class="site-num">03 / CASE</span>
-      <div class="site-info"><div class="site-title">Case Study 02</div><div class="site-url">fx-socialclub.github.io/Case2/</div></div>
-      <div class="site-tags"><span class="site-tag">Landing</span><span class="site-tag">Frontend</span></div>
+      <div class="site-info"><div class="site-title" data-i18n data-ua="Кейс 02">Case Study 02</div><div class="site-url">fx-socialclub.github.io/Case2/</div></div>
+      <div class="site-tags"><span class="site-tag" data-i18n data-ua="Лендінг">Landing</span><span class="site-tag">Frontend</span></div>
       <span class="site-arrow">↗</span>
     </a>
     <a href="https://fx-socialclub.github.io/Case3/" target="_blank" class="site-row" data-cat="case">
       <span class="site-num">04 / CASE</span>
-      <div class="site-info"><div class="site-title">Case Study 03</div><div class="site-url">fx-socialclub.github.io/Case3/</div></div>
-      <div class="site-tags"><span class="site-tag">Landing</span><span class="site-tag">Frontend</span></div>
+      <div class="site-info"><div class="site-title" data-i18n data-ua="Кейс 03">Case Study 03</div><div class="site-url">fx-socialclub.github.io/Case3/</div></div>
+      <div class="site-tags"><span class="site-tag" data-i18n data-ua="Лендінг">Landing</span><span class="site-tag">Frontend</span></div>
       <span class="site-arrow">↗</span>
     </a>
     <a href="https://fx-socialclub.github.io/Case4/" target="_blank" class="site-row" data-cat="case">
       <span class="site-num">05 / CASE</span>
-      <div class="site-info"><div class="site-title">Case Study 04</div><div class="site-url">fx-socialclub.github.io/Case4/</div></div>
-      <div class="site-tags"><span class="site-tag">Landing</span><span class="site-tag">Frontend</span></div>
+      <div class="site-info"><div class="site-title" data-i18n data-ua="Кейс 04">Case Study 04</div><div class="site-url">fx-socialclub.github.io/Case4/</div></div>
+      <div class="site-tags"><span class="site-tag" data-i18n data-ua="Лендінг">Landing</span><span class="site-tag">Frontend</span></div>
       <span class="site-arrow">↗</span>
     </a>
     <a href="https://fx-socialclub.github.io/Case5/" target="_blank" class="site-row" data-cat="case">
       <span class="site-num">06 / CASE</span>
-      <div class="site-info"><div class="site-title">Case Study 05</div><div class="site-url">fx-socialclub.github.io/Case5/</div></div>
-      <div class="site-tags"><span class="site-tag">Landing</span><span class="site-tag">Frontend</span></div>
+      <div class="site-info"><div class="site-title" data-i18n data-ua="Кейс 05">Case Study 05</div><div class="site-url">fx-socialclub.github.io/Case5/</div></div>
+      <div class="site-tags"><span class="site-tag" data-i18n data-ua="Лендінг">Landing</span><span class="site-tag">Frontend</span></div>
       <span class="site-arrow">↗</span>
     </a>
     <a href="https://fx-socialclub.github.io/Clean/" target="_blank" class="site-row" data-cat="service">
       <span class="site-num">07 / SRV</span>
-      <div class="site-info"><div class="site-title">Cleaning Service</div><div class="site-url">fx-socialclub.github.io/Clean/</div></div>
-      <div class="site-tags"><span class="site-tag">Service</span><span class="site-tag">Canvas</span></div>
+      <div class="site-info"><div class="site-title" data-i18n data-ua="Клінінг-сервіс">Cleaning Service</div><div class="site-url">fx-socialclub.github.io/Clean/</div></div>
+      <div class="site-tags"><span class="site-tag" data-i18n data-ua="Сервіс">Service</span><span class="site-tag">Canvas</span></div>
       <span class="site-arrow">↗</span>
     </a>
     <a href="https://fx-socialclub.github.io/clean-service/" target="_blank" class="site-row" data-cat="service">
       <span class="site-num">08 / SRV</span>
-      <div class="site-info"><div class="site-title">Clean Service — full site</div><div class="site-url">fx-socialclub.github.io/clean-service/</div></div>
-      <div class="site-tags"><span class="site-tag tool">Video</span><span class="site-tag">Service</span></div>
+      <div class="site-info"><div class="site-title" data-i18n data-ua="Клінінг — повний сайт">Clean Service — full site</div><div class="site-url">fx-socialclub.github.io/clean-service/</div></div>
+      <div class="site-tags"><span class="site-tag tool" data-i18n data-ua="Відео">Video</span><span class="site-tag" data-i18n data-ua="Сервіс">Service</span></div>
       <span class="site-arrow">↗</span>
     </a>
     <a href="https://fx-socialclub.github.io/mario-ovalot/" target="_blank" class="site-row" data-cat="moving">
@@ -526,24 +534,38 @@ footer{position:relative;z-index:1;padding:32px 48px;border-top:1px solid var(--
 
 <!-- CTA -->
 <section class="cta-section" id="contact">
-  <div class="cta-label">Let&rsquo;s talk</div>
-  <h2 class="cta-title">Need an interface that<br>ships and <em>a funnel that runs itself</em>?</h2>
-  <p class="cta-sub">Send me your goal in Telegram — design, front-end, automation or all three — and I&rsquo;ll come back with a plan.</p>
+  <div class="cta-label" data-i18n data-ua="Давай поспілкуємось">Let&rsquo;s talk</div>
+  <h2 class="cta-title" data-i18n data-ua="Потрібен інтерфейс, що деплоїться,<br>і <em>воронка, що працює сама</em>?">Need an interface that<br>ships and <em>a funnel that runs itself</em>?</h2>
+  <p class="cta-sub" data-i18n data-ua="Напиши мені в Telegram свою задачу — дизайн, фронтенд, автоматизація чи все разом — і я повернусь із планом.">Send me your goal in Telegram — design, front-end, automation or all three — and I&rsquo;ll come back with a plan.</p>
   <a href="https://t.me/FXSCXI" target="_blank" class="cta-tg">
     <span class="cta-tg-icon">✈</span><span>@FXSCXI</span><span style="opacity:0.5">→</span>
   </a>
 </section>
 
 <footer>
-  <div class="footer-logo">FX SOCIAL CLUB © 2026</div>
+  <div class="footer-logo">VADIM M. © 2026</div>
   <div class="footer-links">
-    <a href="#about">About</a><a href="#skills">Skills</a><a href="#work">Work</a>
+    <a href="#about" data-i18n data-ua="Про мене">About</a><a href="#skills" data-i18n data-ua="Навички">Skills</a><a href="#work" data-i18n data-ua="Роботи">Work</a>
     <a href="https://t.me/FXSCXI" target="_blank">Telegram</a>
   </div>
-  <div class="footer-copy">UX/UI Design × AI Automation · Kyiv</div>
+  <div class="footer-copy" data-i18n data-ua="UX/UI Дизайн × AI Automation · Київ">UX/UI Design × AI Automation · Kyiv</div>
 </footer>
 
 <script>
+// language switch
+(function(){
+  const nodes=document.querySelectorAll('[data-i18n]');
+  nodes.forEach(n=>{n.dataset.en=n.innerHTML;});
+  function setLang(lang){
+    nodes.forEach(n=>{ n.innerHTML = (lang==='ua') ? n.dataset.ua : n.dataset.en; });
+    document.documentElement.lang = (lang==='ua') ? 'uk' : 'en';
+    document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active', b.dataset.lang===(lang==='ua'?'ua':'us')));
+  }
+  document.querySelectorAll('.lang-btn').forEach(b=>{
+    b.addEventListener('click',()=>setLang(b.dataset.lang==='ua'?'ua':'us'));
+  });
+})();
+
 // cursor
 const cDot=document.getElementById('cDot'),cRing=document.getElementById('cRing');
 let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
@@ -596,7 +618,7 @@ document.querySelectorAll('.filter-btn').forEach(b=>{b.addEventListener('click',
     const cRX=Math.cos(rotX),sRX=Math.sin(rotX),cRY=Math.cos(rotY+autoAngle),sRY=Math.sin(rotY+autoAngle);
     const proj=pts.map(p=>{let x=p.ox*cRY-p.oz*sRY,z=p.ox*sRY+p.oz*cRY;let y=p.oy*cRX-z*sRX;z=p.oy*sRX+z*cRX;return{sx:CX+x*R*ps,sy:CY+y*R*ps,depth:(z+1)/2,sz:p.sz*((z+1.5)/2.5),br:p.br*((z+1.5)/2.5)};});
     proj.sort((a,b)=>a.depth-b.depth);
-    proj.forEach(p=>{const a=Math.min(p.br*(hovering?1:.75),1);ctx.beginPath();ctx.arc(p.sx,p.sy,p.sz,0,Math.PI*2);ctx.fillStyle=`rgba(255,255,255,${a.toFixed(2)})`;ctx.fill();});
+    proj.forEach(p=>{const a=Math.min(p.br*(hovering?1:.75),1);ctx.beginPath();ctx.arc(p.sx,p.sy,p.sz,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,'+a.toFixed(2)+')';ctx.fill();});
     requestAnimationFrame(draw);
   }
   draw();
